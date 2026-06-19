@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método NeuroRotina Kids — Primeiros 7 Dias de Autonomia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0D47A1;--blue-mid:#1565C0;--blue-light:#42A5F5;
+  --blue-pale:#E3F2FD;--blue-pale2:#BBDEFB;
+  --amber:#FFC107;--amber-dark:#F57F17;--amber-pale:#FFF8E1;--amber-text:#4E2A00;
+  --green-pale:#E8F5E9;--green-dark:#2E7D32;
+  --red-pale:#FFEBEE;--red-dark:#C62828;
+  --white:#fff;--gray-50:#F8F9FA;--gray-100:#F1F3F5;
+  --gray-200:#E9ECEF;--gray-300:#DEE2E6;--gray-400:#CED4DA;
+  --gray-500:#6C757D;--gray-700:#495057;--gray-900:#212529;
+  --r-sm:8px;--r-md:12px;--r-lg:20px;--r-xl:28px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--gray-900);background:#fff;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+.container-narrow{max-width:720px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px;display:block}
+h1{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.12}
+h2{font-size:clamp(20px,3vw,32px);font-weight:700;line-height:1.22}
+h3{font-size:18px;font-weight:600}
+h4{font-size:15px;font-weight:600}
+.lead{font-size:17px;line-height:1.75;color:var(--gray-700)}
+.muted{color:var(--gray-500);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;padding:14px 32px;border-radius:var(--r-sm);border:none;cursor:pointer;text-decoration:none;transition:opacity .15s,transform .1s}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:var(--amber);color:var(--amber-text)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-outline{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+.btn-ghost{background:var(--gray-100);color:var(--gray-700);border:1px solid var(--gray-300)}
+.btn-lg{padding:18px 42px;font-size:17px;border-radius:var(--r-md)}
+.btn-full{width:100%}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;padding:4px 12px;border-radius:20px}
+.badge-blue{background:var(--blue-pale);color:var(--blue)}
+.badge-amber{background:var(--amber-pale);color:var(--amber-dark);border:1px solid #FFE082}
+.badge-gray{background:var(--gray-200);color:var(--gray-700)}
+.badge-green{background:#E8F5E9;color:#2E7D32;border:1px solid #C8E6C9}
+.divider{border:none;border-top:1px solid var(--gray-200);margin:0}
+.ethical-note{font-size:12px;color:var(--gray-500);line-height:1.6;border-left:2px solid var(--gray-300);padding-left:12px;margin-top:16px}
+
+/* ── PLACEHOLDERS (apenas fotos reais — sem mockups de produto físico) ── */
+.photo-placeholder,.img-placeholder{
+  background:var(--gray-100);border:2px dashed var(--gray-300);border-radius:var(--r-md);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;color:var(--gray-500);font-size:12px;text-align:center;padding:20px;
+}
+.photo-placeholder::before,.img-placeholder::before{
+  content:attr(data-label);font-size:10px;font-weight:700;color:var(--blue);
+  text-transform:uppercase;letter-spacing:.06em;background:var(--blue-pale);
+  border:1px solid var(--blue-pale2);padding:3px 8px;border-radius:4px;margin-bottom:4px
+}
+.photo-placeholder svg,.img-placeholder svg{width:28px;height:28px;opacity:.2}
+
+/* ── DIGITAL MOCKUP (SVG inline — representa folhas imprimíveis, não caixa) ── */
+.digital-mockup{position:relative;width:100%;display:flex;align-items:center;justify-content:center;padding:20px 0}
+.sheet{border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.sheet-main{width:260px;position:relative;z-index:3}
+.sheet-back1{position:absolute;width:240px;transform:rotate(-4deg) translate(-30px,8px);z-index:1;opacity:.7}
+.sheet-back2{position:absolute;width:240px;transform:rotate(3deg) translate(30px,10px);z-index:2;opacity:.85}
+.mini-card{border-radius:6px;padding:10px 14px;font-size:11px;font-weight:600;position:absolute;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+
+/* ── HERO ── */
+#hero{background:var(--blue);padding:0}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;min-height:580px;align-items:center;gap:48px;padding:80px 24px;max-width:1080px;margin:0 auto}
+.hero-text h1{color:#fff;margin-bottom:16px}
+.hero-text .lead{color:rgba(255,255,255,.75);margin-bottom:24px;font-size:16px}
+.seals{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.seal{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:500;color:rgba(255,255,255,.85)}
+.seal-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:5px}
+.digital-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:6px 14px;margin-bottom:20px}
+.digital-badge svg{width:14px;height:14px;color:var(--amber)}
+.digital-badge span{font-size:12px;font-weight:700;color:#fff;letter-spacing:.04em}
+.digital-badge .sep{color:rgba(255,255,255,.3);margin:0 2px}
+.hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.delivery-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:8px;line-height:1.6}
+.delivery-note strong{color:rgba(255,255,255,.75)}
+.guarantee-line{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.4);margin-top:8px}
+.guarantee-line svg{width:13px;height:13px}
+.ethical-note-hero{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px;line-height:1.6}
+
+/* ── STORY ── */
+#story{background:#fff}
+.story-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center}
+.author-tag{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:var(--blue-pale);border:2px solid var(--blue-pale2);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--blue);flex-shrink:0;overflow:hidden}
+.author-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+blockquote{border-left:3px solid var(--blue-light);padding:18px 22px;background:var(--blue-pale);border-radius:0 var(--r-sm) var(--r-sm) 0;margin:18px 0}
+blockquote p{font-family:'Lora',serif;font-style:italic;font-size:16px;line-height:1.8;color:var(--blue)}
+
+/* ── NOT JUST ── */
+#not-just{background:var(--gray-50)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.compare-col{border-radius:var(--r-md);padding:22px}
+.compare-col.bad{background:var(--red-pale);border:1px solid #FFCDD2}
+.compare-col.good{background:var(--green-pale);border:1px solid #C8E6C9}
+.compare-col h4{font-size:12px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em}
+.compare-col.bad h4{color:var(--red-dark)}
+.compare-col.good h4{color:var(--green-dark)}
+.compare-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:14px;line-height:1.5}
+.compare-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.compare-col.bad .compare-row svg{color:var(--red-dark)}
+.compare-col.good .compare-row svg{color:var(--green-dark)}
+
+/* ── PONTOS ── */
+#pontos{background:var(--blue)}
+.pontos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.pontos-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:var(--r-md);padding:22px}
+.pontos-icon{width:34px;height:34px;background:rgba(255,193,7,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.pontos-icon svg{width:17px;height:17px;color:var(--amber)}
+.pontos-letter{font-size:38px;font-weight:700;color:var(--amber);line-height:1;margin-bottom:6px;font-family:'Lora',serif}
+.pontos-word{font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
+.pontos-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:5px}
+.pontos-desc{font-size:13px;color:rgba(255,255,255,.58);line-height:1.6}
+
+/* ── WHY ── */
+#why{background:var(--gray-50)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px;margin-top:30px}
+.why-card{padding:20px;border:1px solid var(--gray-200);border-radius:var(--r-md);background:#fff}
+.why-icon{width:38px;height:38px;border-radius:var(--r-sm);background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.why-icon svg{width:18px;height:18px;color:var(--blue)}
+.why-card h4{margin-bottom:5px}
+.why-card p{font-size:13px;color:var(--gray-500);line-height:1.6}
+
+/* ── PAIN ── */
+#pain{background:#fff}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px;margin-top:30px}
+.pain-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:18px;display:flex;align-items:flex-start;gap:12px}
+.pain-icon{width:34px;height:34px;border-radius:8px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pain-icon svg{width:16px;height:16px;color:var(--blue)}
+.pain-text{font-size:14px;font-weight:500;line-height:1.5}
+
+/* ── CASE ZERO ── */
+#case-zero{background:var(--blue-pale);border-top:1px solid var(--blue-pale2);border-bottom:1px solid var(--blue-pale2)}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.ba-col{border-radius:var(--r-md);padding:22px}
+.ba-col.before{background:#fff;border:1px solid var(--gray-200)}
+.ba-col.after{background:var(--blue)}
+.ba-col h4{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+.ba-col.before h4{color:var(--gray-500)}
+.ba-col.after h4{color:rgba(255,255,255,.4)}
+.ba-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:14px;line-height:1.5}
+.ba-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.ba-col.before .ba-row{color:var(--gray-700)}
+.ba-col.before .ba-row svg{color:var(--gray-400)}
+.ba-col.after .ba-row{color:rgba(255,255,255,.85)}
+.ba-col.after .ba-row svg{color:var(--blue-light)}
+
+/* ── REAL ROUTINE ── */
+#real-routine{background:#fff}
+.routine-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:start;margin-top:32px}
+.callout-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:13px 15px;margin-bottom:10px}
+.callout-num{font-size:10px;font-weight:700;color:var(--blue-light);letter-spacing:.07em;margin-bottom:2px}
+.callout-title{font-size:14px;font-weight:600;margin-bottom:2px}
+.callout-desc{font-size:13px;color:var(--gray-500);line-height:1.5}
+.rewards-box{background:var(--amber-pale);border:1px solid #FFE082;border-radius:var(--r-md);padding:18px;margin-top:14px}
+.rewards-box h4{color:var(--amber-text);margin-bottom:10px;font-size:14px}
+.reward-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:7px;font-size:13px;color:var(--amber-text);line-height:1.4}
+.reward-row svg{width:13px;height:13px;flex-shrink:0;margin-top:2px;color:var(--amber-dark)}
+
+/* ── CHILD FEELING ── */
+#child-feeling{background:var(--blue)}
+.feeling-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:32px}
+.feeling-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:18px;text-align:center}
+.feeling-card .qm{font-family:'Lora',serif;font-size:26px;color:var(--amber);line-height:1;margin-bottom:7px}
+.feeling-card p{font-size:14px;color:#fff;font-style:italic;line-height:1.5}
+
+/* ── PRODUCT JOURNEY ── */
+#product{background:var(--blue);padding-top:0}
+.journey-section{padding:80px 0}
+.journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;margin-top:40px}
+.day-row{display:flex;align-items:flex-start;gap:13px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.day-row:first-child{padding-top:0}
+.day-row:last-child{border-bottom:none}
+.day-num{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--blue-light);flex-shrink:0}
+.day-label{font-size:14px;font-weight:600;color:#fff;display:block;margin-bottom:2px}
+.day-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5}
+.deliverables-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:18px;margin-top:18px}
+.dlabel{font-size:11px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;display:block}
+.del-row{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:7px}
+.del-row svg{width:13px;height:13px;color:var(--blue-light);flex-shrink:0}
+.bonus-box{margin-top:12px;padding:13px 16px;background:rgba(255,193,7,.08);border:1px solid rgba(255,193,7,.22);border-radius:var(--r-sm);display:flex;align-items:flex-start;gap:10px}
+.bonus-box svg{width:16px;height:16px;color:var(--amber);flex-shrink:0;margin-top:2px}
+.bonus-box p{font-size:13px;color:rgba(255,255,255,.75)}
+.bonus-box strong{color:var(--amber)}
+
+/* ── O QUE VOCÊ REALMENTE RECEBE ── */
+#what-you-get{background:var(--gray-50)}
+.files-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:13px;margin-top:32px}
+.file-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);padding:18px 14px;text-align:center;position:relative}
+.file-card .file-icon{width:44px;height:56px;margin:0 auto 12px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.04em}
+.file-card .file-icon.blue{background:var(--blue-pale);border:1.5px solid var(--blue-pale2);color:var(--blue)}
+.file-card .file-icon.amber{background:var(--amber-pale);border:1.5px solid #FFE082;color:var(--amber-dark)}
+.file-card .file-icon.green{background:#E8F5E9;border:1.5px solid #C8E6C9;color:var(--green-dark)}
+.file-card .file-icon svg{width:22px;height:22px}
+.file-card h4{font-size:12px;margin-bottom:3px}
+.file-card p{font-size:11px;color:var(--gray-500);line-height:1.4}
+.file-card .check-badge{position:absolute;top:10px;right:10px;width:18px;height:18px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.file-card .check-badge svg{width:10px;height:10px;color:#fff}
+.instant-access-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue-pale);border:1px solid var(--blue-pale2);border-radius:var(--r-md);padding:14px 20px;margin-top:24px}
+.instant-access-bar svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
+.instant-access-bar span{font-size:14px;font-weight:600;color:var(--blue)}
+.instant-access-bar .sep{color:var(--blue-pale2);font-size:18px}
+
+/* ── CARDS VALUE ── */
+#cards-value{background:#fff}
+.cards-value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:32px}
+.card-value-item{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:20px}
+.card-value-item .cv-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.card-value-item .cv-icon.blue{background:var(--blue-pale)}
+.card-value-item .cv-icon.amber{background:var(--amber-pale)}
+.card-value-item .cv-icon svg{width:18px;height:18px}
+.card-value-item .cv-icon.blue svg{color:var(--blue)}
+.card-value-item .cv-icon.amber svg{color:var(--amber-dark)}
+.card-value-item h4{margin-bottom:5px;font-size:14px}
+.card-value-item p{font-size:13px;color:var(--gray-500);line-height:1.6}
+
+/* ── DEVELOPS ── */
+#develops{background:var(--gray-50)}
+.develops-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:13px;margin-top:30px}
+.develop-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);padding:18px}
+.develop-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.develop-icon svg{width:19px;height:19px;color:var(--blue)}
+.develop-card h4{margin-bottom:4px}
+.develop-card p{font-size:13px;color:var(--gray-500);line-height:1.6}
+
+/* ── AUTHOR ── */
+#author{background:#fff}
+.author-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.credentials{margin-top:16px;display:flex;flex-direction:column;gap:7px}
+.credential-row{display:flex;align-items:center;gap:10px;font-size:14px}
+.credential-dot{width:7px;height:7px;border-radius:50%;background:var(--blue-light);flex-shrink:0}
+.author-quote{margin-top:22px;padding:18px 22px;background:var(--amber-pale);border-left:3px solid var(--amber);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.author-quote p{font-family:'Lora',serif;font-style:italic;font-size:15px;line-height:1.8;color:var(--amber-text)}
+.can-orient{margin-top:22px;padding:18px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md)}
+.can-orient h4{font-size:12px;font-weight:700;color:var(--blue);margin-bottom:11px;text-transform:uppercase;letter-spacing:.05em}
+.orient-row{display:flex;align-items:center;gap:10px;font-size:14px;margin-bottom:7px}
+.orient-row svg{width:14px;height:14px;color:var(--blue-light);flex-shrink:0}
+
+/* ── FIT ── */
+#fit{background:var(--gray-50)}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.fit-col{border-radius:var(--r-md);padding:22px}
+.fit-col.yes{background:var(--green-pale);border:1px solid #C8E6C9}
+.fit-col.no{background:var(--gray-100);border:1px solid var(--gray-300)}
+.fit-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:13px}
+.fit-col.yes h4{color:var(--green-dark)}
+.fit-col.no h4{color:var(--gray-500)}
+.fit-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:14px;line-height:1.5}
+.fit-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.fit-col.yes .fit-row svg{color:var(--green-dark)}
+.fit-col.no .fit-row svg{color:var(--gray-400)}
+
+/* ── EXPECT ── */
+#expect{background:#fff}
+.expect-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.expect-col{padding:22px;border-radius:var(--r-md)}
+.expect-col.positive{background:var(--blue-pale);border:1px solid var(--blue-pale2)}
+.expect-col.negative{background:var(--gray-50);border:1px solid var(--gray-200)}
+.expect-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:13px}
+.expect-col.positive h4{color:var(--blue)}
+.expect-col.negative h4{color:var(--gray-500)}
+.expect-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:14px;line-height:1.5}
+.expect-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.expect-col.positive .expect-row svg{color:var(--blue)}
+.expect-col.negative .expect-row svg{color:var(--gray-400)}
+
+/* ── KIT SENSORIAL ── */
+#kit-sensorial{background:var(--gray-50);border-top:1px solid var(--gray-200)}
+.kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;margin-top:32px}
+.kit-features{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.kit-feature{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);padding:15px}
+.kit-feature svg{width:18px;height:18px;color:var(--blue);margin-bottom:7px;display:block}
+.kit-feature h4{font-size:13px;margin-bottom:2px}
+.kit-feature p{font-size:12px;color:var(--gray-500)}
+.digital-note-box{background:var(--blue-pale);border:1px solid var(--blue-pale2);border-radius:var(--r-md);padding:16px;margin-top:18px;display:flex;align-items:flex-start;gap:10px}
+.digital-note-box svg{width:16px;height:16px;color:var(--blue);flex-shrink:0;margin-top:2px}
+.digital-note-box p{font-size:13px;color:var(--blue-mid);line-height:1.6}
+
+/* ── PRICING ── */
+#pricing{background:var(--gray-50)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:start}
+.pricing-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:24px 20px;display:flex;flex-direction:column}
+.pricing-card.featured{border:2px solid var(--blue);position:relative}
+.featured-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.07em;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.plan-name{font-size:11px;font-weight:700;color:var(--gray-500);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
+.plan-price{font-size:34px;font-weight:700;color:var(--blue);line-height:1;margin-bottom:3px}
+.plan-price .cur{font-size:16px;font-weight:600;vertical-align:top;margin-top:6px;display:inline-block}
+.plan-note{font-size:13px;color:var(--gray-500);margin-bottom:15px}
+.plan-divider{border:none;border-top:1px solid var(--gray-200);margin:12px 0}
+.plan-feature{display:flex;align-items:flex-start;gap:9px;font-size:13px;margin-bottom:8px;line-height:1.4}
+.plan-feature svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.plan-feature.active svg{color:var(--blue)}
+.plan-feature.inactive{color:var(--gray-400)}
+.plan-feature.inactive svg{color:var(--gray-300)}
+.plan-cta{margin-top:auto;padding-top:15px}
+.plan-sub{font-size:12px;color:var(--gray-500);text-align:center;margin-top:7px}
+.digital-tag{display:inline-flex;align-items:center;gap:5px;background:#E8F5E9;border:1px solid #C8E6C9;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--green-dark);margin-bottom:14px}
+.digital-tag svg{width:12px;height:12px}
+
+/* ── GUARANTEE ── */
+#guarantee{background:#fff}
+.guarantee-box{max-width:600px;margin:0 auto;border:1px solid var(--gray-200);border-radius:var(--r-xl);padding:44px;text-align:center}
+.shield-icon{width:56px;height:56px;background:var(--blue-pale);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+.shield-icon svg{width:26px;height:26px;color:var(--blue)}
+
+/* ── FAQ ── */
+#faq{background:var(--gray-50)}
+.faq-list{max-width:640px;margin:30px auto 0}
+.faq-item{border-bottom:1px solid var(--gray-200);padding:16px 0}
+.faq-item:first-child{padding-top:0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:15px;font-weight:600;margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--gray-500);line-height:1.7}
+
+/* ── CTA FINAL ── */
+#cta-final{background:var(--blue);padding:96px 0;text-align:center}
+#cta-final h2{color:#fff;margin-bottom:12px}
+#cta-final .lead{color:rgba(255,255,255,.62);max-width:480px;margin:0 auto 28px;font-size:16px}
+.cta-meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.cta-meta span{display:flex;align-items:center;gap:5px}
+.cta-meta svg{width:12px;height:12px}
+
+/* ── FOOTER ── */
+footer{background:#060F26;color:rgba(255,255,255,.35);padding:30px 24px;text-align:center;font-size:13px}
+footer strong{color:rgba(255,255,255,.6)}
+.footer-links{display:flex;justify-content:center;gap:22px;margin-top:7px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.25);text-decoration:none;font-size:12px}
+.footer-ethical{margin:12px auto 0;font-size:11px;color:rgba(255,255,255,.2);max-width:580px;line-height:1.7}
+
+@media(max-width:768px){
+  section{padding:56px 0}
+  .hero-inner{grid-template-columns:1fr;padding:56px 24px;gap:28px}
+  .story-grid,.journey-grid,.author-grid,.routine-wrap,.kit-grid{grid-template-columns:1fr;gap:28px}
+  .compare-grid,.before-after,.fit-grid,.expect-grid{grid-template-columns:1fr}
+  .pontos-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .guarantee-box{padding:30px 18px}
+  h1{font-size:26px}h2{font-size:20px}
+}
+@media(max-width:480px){.pontos-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+     HERO — mockup SVG de folhas imprimíveis
+     ═══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow" style="color:rgba(255,255,255,.35)">Método NeuroRotina Kids</span>
+      <h1>Um sistema visual<br>que a criança consegue<br>enxergar, seguir<br>e celebrar.</h1>
+      <p class="lead">Método de 7 dias criado por pedagoga especialista em AEE e mãe de uma criança com TDAH — usando rotina visual, checklist, pontos e recompensas saudáveis para desenvolver autonomia infantil.</p>
+
+      <div class="digital-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span>100% Digital</span>
+        <span class="sep">·</span>
+        <span>Baixe</span>
+        <span class="sep">·</span>
+        <span>Imprima</span>
+        <span class="sep">·</span>
+        <span>Aplique</span>
+      </div>
+
+      <div class="seals">
+        <div class="seal"><div class="seal-dot"></div>Criado por pedagoga especialista em AEE</div>
+        <div class="seal"><div class="seal-dot"></div>Aplicado em rotina real com criança com TDAH</div>
+        <div class="seal"><div class="seal-dot"></div>Framework P.O.N.T.O.S.: planejamento, progresso e conquista</div>
+        <div class="seal"><div class="seal-dot"></div>Apoia funções executivas sem prometer cura</div>
+      </div>
+
+      <div class="hero-cta-row">
+        <a href="#pricing" class="btn btn-primary btn-lg">Quero aplicar com meu filho</a>
+        <a href="#pontos" class="btn btn-outline btn-lg">Ver o Método P.O.N.T.O.S.</a>
+      </div>
+      <p class="delivery-note"><strong>Acesso imediato aos arquivos para download e impressão.</strong><br>Sem espera. Sem frete.</p>
+      <div class="guarantee-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Garantia incondicional de 7 dias · R$ 47,00
+      </div>
+      <p class="ethical-note-hero">Não substitui terapia ou acompanhamento médico. Ferramenta pedagógica de apoio à rotina familiar.</p>
+    </div>
+
+    <!-- MOCKUP SVG: folhas imprimíveis em perspectiva — sem caixa física -->
+    <div style="display:flex;align-items:center;justify-content:center;padding:20px 0">
+      <div style="position:relative;width:100%;max-width:380px;height:440px">
+
+        <!-- Folha traseira esquerda — card pontos -->
+        <div style="position:absolute;top:60px;left:0;width:200px;transform:rotate(-6deg);z-index:1">
+          <svg width="200" height="130" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="130" rx="8" fill="#FFF8E1"/>
+            <rect width="200" height="28" rx="8" fill="#FFC107"/>
+            <rect y="20" width="200" height="8" fill="#FFC107"/>
+            <text x="12" y="19" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#4E2A00">QUADRO DE PONTOS</text>
+            <rect x="12" y="36" width="80" height="8" rx="3" fill="#FFE082" opacity=".7"/>
+            <rect x="12" y="50" width="60" height="8" rx="3" fill="#FFE082" opacity=".5"/>
+            <rect x="12" y="64" width="70" height="8" rx="3" fill="#FFE082" opacity=".5"/>
+            <rect x="12" y="78" width="50" height="8" rx="3" fill="#FFE082" opacity=".4"/>
+            <text x="12" y="112" font-family="Inter,sans-serif" font-size="8" fill="#F57F17" opacity=".7">★ ★ ★ ★ ★ ★ ★</text>
+          </svg>
+        </div>
+
+        <!-- Folha traseira direita — card recompensa -->
+        <div style="position:absolute;top:50px;right:0;width:190px;transform:rotate(5deg);z-index:1">
+          <svg width="190" height="120" viewBox="0 0 190 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="190" height="120" rx="8" fill="#E3F2FD"/>
+            <rect width="190" height="28" rx="8" fill="#1565C0"/>
+            <rect y="20" width="190" height="8" fill="#1565C0"/>
+            <text x="12" y="19" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff">RECOMPENSAS</text>
+            <rect x="12" y="36" width="70" height="7" rx="3" fill="#90CAF9" opacity=".7"/>
+            <rect x="12" y="49" width="55" height="7" rx="3" fill="#90CAF9" opacity=".5"/>
+            <rect x="12" y="62" width="65" height="7" rx="3" fill="#90CAF9" opacity=".5"/>
+            <rect x="12" y="75" width="45" height="7" rx="3" fill="#90CAF9" opacity=".4"/>
+            <text x="12" y="105" font-family="Inter,sans-serif" font-size="8" fill="#1565C0" opacity=".6">15 pts · 18 pts · 20 pts</text>
+          </svg>
+        </div>
+
+        <!-- Folha principal — rotina do Carlos Daniel -->
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:240px;z-index:3">
+          <!-- ╔══════════════════════════════════════════
+               FOTO REAL: produtohead ou produtohead 2
+               Substituir este SVG por:
+               <img src="produtohead.jpg" alt="Rotina NeuroRotina Kids"
+                    style="width:240px;border-radius:10px;
+                           box-shadow:0 4px 20px rgba(0,0,0,.2)">
+               ══════════════════════════════════════════╝ -->
+          <svg width="240" height="340" viewBox="0 0 240 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.2)">
+            <rect width="240" height="340" fill="white"/>
+            <rect width="240" height="48" fill="#0D47A1"/>
+            <text x="120" y="20" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white" text-anchor="middle">ROTINA DIÁRIA</text>
+            <text x="120" y="36" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#FFC107" text-anchor="middle">CARLOS DANIEL</text>
+            <text x="120" y="46" font-family="Inter,sans-serif" font-size="7" fill="rgba(255,255,255,.7)" text-anchor="middle">EU CONSIGO! UM PASSO DE CADA VEZ</text>
+            <!-- linhas de conteúdo -->
+            <rect x="8" y="55" width="224" height="16" rx="3" fill="#E3F2FD"/>
+            <rect x="8" y="75" width="224" height="16" rx="3" fill="#F8F9FA"/>
+            <rect x="8" y="95" width="224" height="16" rx="3" fill="#E3F2FD"/>
+            <rect x="8" y="115" width="224" height="16" rx="3" fill="#F8F9FA"/>
+            <rect x="8" y="135" width="224" height="16" rx="3" fill="#E3F2FD"/>
+            <rect x="8" y="155" width="224" height="16" rx="3" fill="#F8F9FA"/>
+            <rect x="8" y="175" width="224" height="16" rx="3" fill="#E3F2FD"/>
+            <rect x="8" y="195" width="224" height="16" rx="3" fill="#F8F9FA"/>
+            <rect x="8" y="215" width="224" height="16" rx="3" fill="#E3F2FD"/>
+            <rect x="8" y="235" width="170" height="16" rx="3" fill="#F8F9FA"/>
+            <!-- mini cards direita -->
+            <rect x="182" y="235" width="50" height="16" rx="3" fill="#FFC107"/>
+            <text x="207" y="246" font-family="Inter,sans-serif" font-size="6" font-weight="700" fill="#4E2A00" text-anchor="middle">PONTOS</text>
+            <!-- rodapé -->
+            <rect x="0" y="280" width="240" height="60" fill="#F8F9FA"/>
+            <rect x="8" y="288" width="100" height="8" rx="3" fill="#E9ECEF"/>
+            <rect x="8" y="302" width="70" height="8" rx="3" fill="#E9ECEF"/>
+            <rect x="130" y="288" width="100" height="8" rx="3" fill="#FFF8E1"/>
+            <rect x="130" y="302" width="80" height="8" rx="3" fill="#FFF8E1"/>
+            <rect x="0" y="320" width="240" height="20" fill="#0D47A1"/>
+            <text x="120" y="334" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="white" text-anchor="middle">FOCO · DISCIPLINA · EU CONSIGO</text>
+          </svg>
+        </div>
+
+        <!-- mini card flutuante — Minha Meta de Hoje -->
+        <div style="position:absolute;bottom:20px;left:10px;z-index:4;background:#fff;border:1.5px solid #0D47A1;border-radius:8px;padding:9px 12px;width:130px;box-shadow:0 2px 10px rgba(0,0,0,.12)">
+          <div style="font-size:9px;font-weight:700;color:#42A5F5;letter-spacing:.06em;margin-bottom:4px">MINHA META DE HOJE</div>
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="display:flex;align-items:center;gap:5px"><div style="width:9px;height:9px;border:1.5px solid #0D47A1;border-radius:2px;flex-shrink:0"></div><span style="font-size:8px;color:#212529">Arrumar a cama</span></div>
+            <div style="display:flex;align-items:center;gap:5px"><div style="width:9px;height:9px;border:1.5px solid #0D47A1;border-radius:2px;flex-shrink:0;background:#0D47A1;display:flex;align-items:center;justify-content:center"><svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:8px;color:#212529">Ler 15 minutos</span></div>
+            <div style="display:flex;align-items:center;gap:5px"><div style="width:9px;height:9px;border:1.5px solid #0D47A1;border-radius:2px;flex-shrink:0"></div><span style="font-size:8px;color:#212529">Fazer o dever</span></div>
+          </div>
+        </div>
+
+        <!-- mini card flutuante — estrela de pontos -->
+        <div style="position:absolute;bottom:32px;right:4px;z-index:4;background:#FFC107;border-radius:8px;padding:8px 12px;box-shadow:0 2px 10px rgba(0,0,0,.12)">
+          <div style="font-size:9px;font-weight:700;color:#4E2A00;letter-spacing:.04em;margin-bottom:2px">SEMANA</div>
+          <div style="font-size:18px;font-weight:700;color:#4E2A00;line-height:1">17</div>
+          <div style="font-size:8px;color:#4E2A00;opacity:.7">de 20 pts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ HISTÓRIA REAL ═══════════ -->
+<section id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div>
+        <!-- ╔════════════════════════════════════════
+             FOTO REAL: chryslenecarlosdaniel.jpg
+             Substituir placeholder por:
+             <img src="chryslenecarlosdaniel.jpg"
+                  alt="Chryslen com Carlos Daniel"
+                  style="width:100%;height:460px;
+                         object-fit:cover;border-radius:20px">
+             ════════════════════════════════════════╝ -->
+        <div class="photo-placeholder" data-label="Foto — chryslenecarlosdaniel.jpg" style="height:460px;border-radius:20px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <div>Usar: chryslenecarlosdaniel.jpg<br>480 × 560px</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">A história real</span>
+        <h2 style="margin-bottom:20px">Este método nasceu dentro da minha casa.</h2>
+        <div class="author-tag">
+          <div class="author-avatar">
+            <!-- Substituir por: <img src="chryslenecarlosdaniel2.jpg" alt="Chryslen"> -->
+            CS
+          </div>
+          <div>
+            <div style="font-size:15px;font-weight:600">Chryslen Souza</div>
+            <div class="muted">Pedagoga · Especialista em AEE · Mãe de criança com TDAH</div>
+          </div>
+        </div>
+        <blockquote><p>"Como mãe e pedagoga, eu me via repetindo as mesmas orientações todos os dias. 'Arrume sua cama.' 'Escove os dentes.' 'Pegue sua mochila.' Eu não queria viver cobrando. Queria ensinar autonomia. Foi assim que nasceu o Método NeuroRotina Kids."</p></blockquote>
+        <p style="font-size:15px;color:var(--gray-700);line-height:1.75">O método não é teoria. É o que funciona todos os dias com Carlos Daniel, 10 anos, diagnosticado com TDAH — e que agora está disponível para download e impressão para sua família.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════ NÃO É SÓ UM QUADRO ═══════════ -->
+<section id="not-just">
+  <div class="container">
+    <div style="max-width:560px">
+      <span class="eyebrow">Posicionamento</span>
+      <h2 style="margin-bottom:14px">Não é só um quadro bonito.<br>É um sistema de autonomia.</h2>
+      <p class="lead" style="font-size:15px">Muitas famílias já tentaram listas e quadros de rotina. O problema é que a maioria apenas mostra tarefas. O Método NeuroRotina Kids organiza a rotina em uma sequência visual com checklist, pontos, recompensas e metas diárias — um sistema para imprimir, afixar e aplicar.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col bad">
+        <h4>Quadro comum de rotina</h4>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Apenas lista tarefas sem sequência</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Depende do adulto lembrar e cobrar</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não trabalha progressão nem conquista</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Não orienta os pais na aplicação</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Sem base pedagógica estruturada</div>
+      </div>
+      <div class="compare-col good">
+        <h4>Método NeuroRotina Kids</h4>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Organiza a sequência visual do dia</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Checklist que a criança marca sozinha</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sistema P.O.N.T.O.S.: pontos e recompensas</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Guia de aplicação em 7 dias para pais</div>
+        <div class="compare-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Baseado em funções executivas e AEE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PONTOS FRAMEWORK ═══════════ -->
+<section id="pontos">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--blue-light)">Framework proprietário</span>
+    <h2 style="color:#fff;max-width:540px;margin-bottom:10px">O método por trás da rotina: P.O.N.T.O.S.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.6);max-width:560px;line-height:1.7">A criança não precisa apenas saber o que fazer. Ela precisa enxergar a rotina, marcar seu progresso, acumular pequenas conquistas e ser celebrada pelo esforço.</p>
+    <div class="pontos-grid">
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="pontos-letter">P</div><div class="pontos-word">Planejar</div><div class="pontos-title">Planejar pequenas tarefas</div><div class="pontos-desc">Poucas metas claras, visíveis e possíveis de executar.</div></div>
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div class="pontos-letter">O</div><div class="pontos-word">Organizar</div><div class="pontos-title">Organizar a rotina visual</div><div class="pontos-desc">A sequência do dia fica visível, reduzindo comandos verbais repetidos.</div></div>
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pontos-letter">N</div><div class="pontos-word">Notar</div><div class="pontos-title">Notar o progresso</div><div class="pontos-desc">A criança marca o que fez e percebe que está avançando.</div></div>
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="pontos-letter">T</div><div class="pontos-word">Transformar</div><div class="pontos-title">Transformar esforço em conquista</div><div class="pontos-desc">Cada tarefa vira ponto e a sensação de "eu consigo" cresce.</div></div>
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="pontos-letter">O</div><div class="pontos-word">Observar</div><div class="pontos-title">Observar e ajustar</div><div class="pontos-desc">Os pais acompanham, identificam dificuldades e adaptam sem rigidez.</div></div>
+      <div class="pontos-card"><div class="pontos-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/></svg></div><div class="pontos-letter">S</div><div class="pontos-word">Celebrar</div><div class="pontos-title">Celebrar com recompensas saudáveis</div><div class="pontos-desc">Pontos geram prêmios simples e afetivos, reforçando constância.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ POR QUE FAZ SENTIDO ═══════════ -->
+<section id="why">
+  <div class="container">
+    <div style="max-width:540px">
+      <span class="eyebrow">Sustentação técnica</span>
+      <h2>Por que o método faz sentido para crianças com dificuldade de execução</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Estímulo visual reduz sobrecarga</h4><p>Informações visuais chegam mais rápido ao cérebro, diminuindo o esforço de lembrar.</p></div>
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Comandos verbais se perdem</h4><p>Para crianças com TDAH, instruções faladas competem com distrações. O visual permanece.</p></div>
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg></div><h4>Checklist gera clareza</h4><p>Marcar tarefas reduz ambiguidade — a criança sabe exatamente o que já fez.</p></div>
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h4>Pontos aumentam motivação</h4><p>A recompensa próxima e visível pode ajudar a manter o foco com mais constância.</p></div>
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Previsibilidade reduz ansiedade</h4><p>Saber o que vem a seguir pode diminuir a resistência e tornar a manhã mais tranquila.</p></div>
+      <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4>Revisão semanal evita rigidez</h4><p>O que funciona fica, o que não funciona é ajustado — sem cobrar perfeição.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════ VOCÊ SE IDENTIFICA? ═══════════ -->
+<section id="pain">
+  <div class="container">
+    <div style="text-align:center;max-width:500px;margin:0 auto">
+      <span class="eyebrow">Você se identifica?</span>
+      <h2>Essas situações acontecem na sua casa?</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg></div><div class="pain-text">Precisa repetir as mesmas orientações várias vezes para ele começar</div></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="pain-text">Seu filho esquece tarefas simples — mochila, dever, material</div></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pain-text">A rotina da manhã é estressante e gera conflito antes da escola</div></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="pain-text">O dever de casa gera resistência e desgaste todos os dias</div></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="pain-text">Ele sabe o que precisa fazer, mas não consegue executar sozinho</div></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div class="pain-text">Dependência excessiva dos pais para cada pequena decisão da rotina</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CASO ZERO ═══════════ -->
+<section id="case-zero">
+  <div class="container">
+    <div style="max-width:560px;margin-bottom:28px">
+      <span class="eyebrow" style="color:var(--blue)">O caso zero</span>
+      <h2 style="margin-bottom:10px">O primeiro aluno do método foi o meu filho.</h2>
+      <p class="lead" style="font-size:15px">Antes de chegar a outras famílias, o NeuroRotina Kids nasceu para ajudar Carlos Daniel em uma rotina real — com os desafios reais do TDAH.</p>
+    </div>
+    <div class="before-after">
+      <div class="ba-col before">
+        <h4>Antes da rotina visual</h4>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Muitos lembretes verbais repetidos</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Dificuldade para iniciar tarefas sozinho</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Esquecimento frequente de materiais</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Dependência constante dos pais</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Desgaste emocional antes da escola</div>
+      </div>
+      <div class="ba-col after">
+        <h4>Com a rotina visual</h4>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mais clareza sobre o que precisa fazer</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Participação ativa marcando as tarefas</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Maior previsibilidade na manhã</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Motivação com pontos e recompensas</div>
+        <div class="ba-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pequenas conquistas diárias celebradas</div>
+      </div>
+    </div>
+    <p class="ethical-note" style="margin-top:20px;max-width:540px">Cada criança responde de uma forma. O objetivo é apoiar a rotina e favorecer autonomia — sem prometer resultados iguais para todas as famílias.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════ ROTINA REAL + PRÊMIOS ═══════════ -->
+<section id="real-routine">
+  <div class="container">
+    <div style="max-width:540px;margin-bottom:28px">
+      <span class="eyebrow">O método na prática</span>
+      <h2>Veja como o sistema funciona quando impresso</h2>
+      <p class="lead" style="margin-top:10px;font-size:15px">Este é o modelo criado dentro da rotina do Carlos Daniel. Você recebe a estrutura completa para adaptar à realidade do seu filho e afixar em casa.</p>
+    </div>
+    <div class="routine-wrap">
+      <div>
+        <!-- ╔════════════════════════════════════════
+             FOTO REAL: card.jpg  (a rotina do Carlos Daniel)
+             Substituir placeholder por:
+             <img src="card.jpg"
+                  alt="Rotina Diária Carlos Daniel"
+                  style="width:100%;border-radius:16px;
+                         box-shadow:0 4px 16px rgba(0,0,0,.1)">
+             ════════════════════════════════════════╝ -->
+        <div class="img-placeholder" data-label="Foto real: card.jpg — rotina do Carlos Daniel" style="height:580px;border-radius:16px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <div>Usar: card.jpg<br>Rotina visual do Carlos Daniel<br>560 × 680px</div>
+        </div>
+      </div>
+      <div>
+        <div class="callout-card"><div class="callout-num">01 · Execução</div><div class="callout-title">A criança marca as tarefas concluídas</div><div class="callout-desc">O campo "feito" é preenchido pela própria criança — não pelo adulto.</div></div>
+        <div class="callout-card"><div class="callout-num">02 · Progresso</div><div class="callout-title">Ela acompanha os pontos acumulados</div><div class="callout-desc">O quadro semanal torna o progresso concreto e visível.</div></div>
+        <div class="callout-card"><div class="callout-num">03 · Recompensa</div><div class="callout-title">Os prêmios combinados ficam visíveis</div><div class="callout-desc">Recompensas claras, previsíveis e proporcionais ao esforço.</div></div>
+        <div class="callout-card" style="border-left:3px solid var(--amber);border-radius:0 var(--r-md) var(--r-md) 0"><div class="callout-num">04 · Motivação</div><div class="callout-title">A criança termina o dia querendo voltar amanhã</div><div class="callout-desc">Ela sabe onde está e o que pode conquistar na próxima sessão.</div></div>
+        <div class="rewards-box">
+          <h4>Por que os pontos e recompensas funcionam?</h4>
+          <div class="reward-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tornam a recompensa visível e antecipável</div>
+          <div class="reward-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Aproximam esforço e resultado de forma concreta</div>
+          <div class="reward-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Aumentam o engajamento com a rotina impressa</div>
+          <div class="reward-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ajudam a criança a celebrar pequenas vitórias</div>
+        </div>
+        <p class="ethical-note">Recompensas devem ser simples, combinadas previamente e usadas como reforço positivo — não como ameaça ou manipulação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA A CRIANÇA ═══════════ -->
+<section id="child-feeling">
+  <div class="container">
+    <div style="text-align:center;max-width:500px;margin:0 auto">
+      <span class="eyebrow" style="color:var(--blue-light)">Para a criança</span>
+      <h2 style="color:#fff;margin-bottom:10px">Para a criança, não é cobrança. É conquista.</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;max-width:480px;margin:0 auto">Quando ela consegue ver o que precisa fazer, marcar o que já fez e acompanhar seus pontos, a rotina passa a ser uma experiência concreta de participação.</p>
+    </div>
+    <div class="feeling-grid">
+      <div class="feeling-card"><div class="qm">"</div><p>Eu sei o que vem agora"</p></div>
+      <div class="feeling-card"><div class="qm">"</div><p>Eu consigo marcar sozinho"</p></div>
+      <div class="feeling-card"><div class="qm">"</div><p>Estou juntando pontos"</p></div>
+      <div class="feeling-card"><div class="qm">"</div><p>Tenho algo para celebrar"</p></div>
+      <div class="feeling-card"><div class="qm">"</div><p>Amanhã posso tentar de novo"</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ JORNADA 7 DIAS ═══════════ -->
+<section class="journey-section" style="background:var(--blue)">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--blue-light)">Aplicação em 7 dias</span>
+    <h2 style="color:#fff;max-width:460px">Uma jornada prática — não apenas arquivos para imprimir</h2>
+    <div class="journey-grid">
+      <div>
+        <div class="day-row"><div class="day-num">D1</div><div><span class="day-label">Apresentar a rotina</span><span class="day-desc">Como mostrar o método para a criança sem imposição.</span></div></div>
+        <div class="day-row"><div class="day-num">D2</div><div><span class="day-label">Escolher poucas metas</span><span class="day-desc">Até 5 tarefas principais para começar com leveza.</span></div></div>
+        <div class="day-row"><div class="day-num">D3</div><div><span class="day-label">Usar o checklist</span><span class="day-desc">A criança começa a marcar pequenas conquistas.</span></div></div>
+        <div class="day-row"><div class="day-num">D4</div><div><span class="day-label">Ativar os pontos</span><span class="day-desc">O sistema P.O.N.T.O.S. entra para apoiar a motivação.</span></div></div>
+        <div class="day-row"><div class="day-num">D5</div><div><span class="day-label">Reduzir lembretes</span><span class="day-desc">Substituir comandos verbais pela orientação visual.</span></div></div>
+        <div class="day-row"><div class="day-num">D6</div><div><span class="day-label">Celebrar o progresso</span><span class="day-desc">Reconhecer avanços — mesmo os pequenos.</span></div></div>
+        <div class="day-row"><div class="day-num">D7</div><div><span class="day-label">Avaliar e ajustar</span><span class="day-desc">Identificar o que funcionou e adaptar para a próxima semana.</span></div></div>
+      </div>
+      <div>
+        <div class="deliverables-box">
+          <span class="dlabel">Arquivos incluídos no download</span>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Método P.O.N.T.O.S. em 7 dias</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Rotina visual modelo</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Rotina editável em branco</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Checklist Minha Meta de Hoje</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Quadro semanal de pontos</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Banco de recompensas</div>
+          <div class="del-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Avaliação final da primeira semana</div>
+        </div>
+        <div class="bonus-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/></svg><p><strong>Bônus:</strong> Checklist "Minha Meta de Hoje" colorido e P&B — prontos para imprimir.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ O QUE VOCÊ REALMENTE RECEBE ═══════════ -->
+<section id="what-you-get">
+  <div class="container">
+    <div style="max-width:540px">
+      <span class="eyebrow">O que você realmente recebe</span>
+      <h2>Arquivos digitais organizados para imprimir e aplicar</h2>
+      <p class="lead" style="margin-top:10px;font-size:15px">Você recebe um conjunto de arquivos PDF prontos para impressão doméstica ou em gráfica — não uma caixa física enviada pelos correios.</p>
+    </div>
+    <div class="files-grid">
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Rotina principal</h4>
+        <p>Modelo completo imprimível</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Minha Meta de Hoje</h4>
+        <p>Checklist diário de 5 tarefas</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h4>Quadro de pontos</h4>
+        <p>Acompanhamento semanal</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/></svg></div>
+        <h4>Banco de recompensas</h4>
+        <p>Ideias de prêmios saudáveis</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h4>Guia de aplicação</h4>
+        <p>Plano de 7 dias para pais</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Avaliação da semana</h4>
+        <p>Formulário de ajuste e revisão</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+        <h4>Rotina editável</h4>
+        <p>Campos em branco personalizáveis</p>
+      </div>
+      <div class="file-card">
+        <div class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="file-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h4>Método P.O.N.T.O.S.</h4>
+        <p>Framework completo em PDF</p>
+      </div>
+    </div>
+    <div class="instant-access-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span>Acesso imediato após a comp
+    </div>
+    <div class="instant-access-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span>Acesso imediato após a compra</span>
+      <span class="sep">·</span>
+      <span>Baixe e imprima em casa</span>
+      <span class="sep">·</span>
+      <span>Sem frete</span>
+      <span class="sep">·</span>
+      <span>Sem espera</span>
+    </div>
+  </div>
+</section>
+
+<section id="cards-value">
+  <div class="container">
+    <div style="max-width:540px">
+      <span class="eyebrow">Cada arquivo tem uma função</span>
+      <h2>Não são apenas folhas para imprimir</h2>
+      <p class="lead" style="margin-top:10px;font-size:15px">Cada arquivo do Método NeuroRotina Kids tem uma função específica dentro do framework P.O.N.T.O.S.</p>
+    </div>
+    <div class="cards-value-grid">
+      <div class="card-value-item"><div class="cv-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/></svg></div><h4>Card de atividade</h4><p>Ajuda a criança a visualizar tarefas em sequência — reduzindo a necessidade de comandos verbais.</p></div>
+      <div class="card-value-item"><div class="cv-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h4>Card de pontos</h4><p>Torna o progresso visível e concreto — a criança vê quantos pontos acumulou na semana.</p></div>
+      <div class="card-value-item"><div class="cv-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/></svg></div><h4>Card de recompensa</h4><p>Ajuda a conectar esforço e conquista — os prêmios ficam visíveis e antecipáveis pela criança.</p></div>
+      <div class="card-value-item"><div class="cv-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg></div><h4>Minha Meta de Hoje</h4><p>Cria foco nas prioridades do dia — poucas metas, alta taxa de conclusão e sensação de conquista.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="develops">
+  <div class="container">
+    <div style="max-width:500px">
+      <span class="eyebrow">Desenvolvimento infantil</span>
+      <h2>O que o NeuroRotina Kids pode ajudar a desenvolver</h2>
+    </div>
+    <div class="develops-grid">
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Funções executivas</h4><p>Planejamento, atenção, memória de trabalho e controle inibitório.</p></div>
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>Autonomia</h4><p>A criança pode começar a participar mais da própria rotina.</p></div>
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/></svg></div><h4>Organização</h4><p>A sequência visual pode ajudar a reduzir esquecimentos.</p></div>
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg></div><h4>Responsabilidade</h4><p>A criança acompanha tarefas e pontos — aprende que esforço gera resultado.</p></div>
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h4>Autorregulação</h4><p>A rotina previsível pode contribuir para reduzir frustração e resistência.</p></div>
+      <div class="develop-card"><div class="develop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><h4>Autoestima</h4><p>Cada tarefa marcada reforça a sensação de "eu consigo".</p></div>
+    </div>
+    <p class="ethical-note" style="margin-top:20px;max-width:540px">Resultados variam conforme a criança e a consistência da aplicação. O método é uma ferramenta de apoio, não uma solução diagnóstica.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="author">
+  <div class="container">
+    <div class="author-grid">
+      <div>
+        <!-- FOTO REAL: chryslenecarlosdaniel2.jpg
+             <img src="chryslenecarlosdaniel2.jpg" alt="Chryslen Souza"
+                  style="width:100%;height:460px;object-fit:cover;border-radius:20px"> -->
+        <div class="photo-placeholder" data-label="Foto: chryslenecarlosdaniel2.jpg" style="height:460px;border-radius:20px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <div>Usar: chryslenecarlosdaniel2.jpg</div>
+        </div>
+        <div class="credentials">
+          <div class="credential-row"><div class="credential-dot"></div>Pedagoga formada</div>
+          <div class="credential-row"><div class="credential-dot"></div>Especialista em AEE</div>
+          <div class="credential-row"><div class="credential-dot"></div>Mãe de Carlos Daniel, 10 anos, TDAH</div>
+          <div class="credential-row"><div class="credential-dot"></div>Criadora do Método P.O.N.T.O.S.</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">A autora</span>
+        <h2 style="margin-bottom:18px">Criado por uma pedagoga.<br>Testado por uma mãe.<br>Aplicado em uma rotina real.</h2>
+        <p style="font-size:15px;color:var(--gray-700);line-height:1.75;margin-bottom:14px">Chryslen Souza une conhecimento pedagógico, especialização em AEE e vivência real como mãe de uma criança com TDAH. O NeuroRotina Kids nasceu dentro da sua casa e foi estruturado como método para outras famílias.</p>
+        <div class="can-orient">
+          <h4>Por que a Chryslen pode te orientar?</h4>
+          <div class="orient-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Formação em Pedagogia</div>
+          <div class="orient-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Especialização em AEE</div>
+          <div class="orient-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vivência diária com TDAH na família</div>
+          <div class="orient-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Criadora do Método P.O.N.T.O.S.</div>
+        </div>
+        <div class="author-quote" style="margin-top:18px">
+          <p>"Eu não criei esse método para vender um PDF. Eu criei porque meu filho precisava de uma rotina que ele conseguisse enxergar, seguir e celebrar."</p>
+        </div>
+        <!-- FOTO REAL: carlosdaniel.jpg
+             <img src="carlosdaniel.jpg" alt="Carlos Daniel"
+                  style="width:100%;height:170px;object-fit:cover;border-radius:12px;margin-top:18px"> -->
+        <div class="img-placeholder" data-label="Foto: carlosdaniel.jpg" style="height:160px;margin-top:18px;border-radius:12px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <div>Usar: carlosdaniel.jpg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="fit">
+  <div class="container">
+    <div style="text-align:center;max-width:480px;margin:0 auto">
+      <span class="eyebrow">Qualificação</span>
+      <h2>O método é para sua família?</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <h4>É para você se...</h4>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Você precisa repetir comandos muitas vezes</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Seu filho tem dificuldade para iniciar tarefas</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>A rotina da manhã ou o dever gera desgaste</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Você quer imprimir e aplicar um método em casa</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Você quer ensinar autonomia com mais leveza</div>
+      </div>
+      <div class="fit-col no">
+        <h4>Não é para você se...</h4>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Você espera receber uma caixa física enviada</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Você procura uma solução milagrosa</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Você busca substituto para terapia especializada</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Você não quer adaptar a rotina à criança real</div>
+        <div class="fit-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Você não pretende aplicar com consistência mínima</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="expect">
+  <div class="container">
+    <div style="text-align:center;max-width:480px;margin:0 auto">
+      <span class="eyebrow">Transparência</span>
+      <h2>O que você pode — e não deve — esperar</h2>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-col positive">
+        <h4>O que você pode esperar</h4>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mais clareza e previsibilidade na rotina</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Menos repetição de comandos verbais</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mais participação ativa da criança</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pequenas conquistas diárias reconhecidas</div>
+      </div>
+      <div class="expect-col negative">
+        <h4>O que você não deve esperar</h4>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Cura ou tratamento do TDAH</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Receber uma caixa física pelos correios</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Substituição de terapia ou acompanhamento</div>
+        <div class="expect-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Resultado igual para todas as crianças</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kit-sensorial">
+  <div class="container">
+    <div class="kit-grid">
+      <div>
+        <span class="badge badge-amber" style="margin-bottom:14px;display:inline-block">Em desenvolvimento</span>
+        <h2 style="margin-bottom:14px">Kit Sensorial P.O.N.T.O.S.</h2>
+        <div class="digital-note-box" style="margin-bottom:16px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p><strong>O produto vendido hoje é 100% digital.</strong> O Kit Sensorial é uma futura versão física do método — ainda em desenvolvimento, sem data definida.</p>
+        </div>
+        <p style="font-size:15px;color:var(--gray-700);line-height:1.75;margin-bottom:16px">Estamos desenvolvendo uma versão física com painel reutilizável, cards de atividades, pinos de conquista e caixa especial para transformar a rotina em uma experiência tátil e participativa.</p>
+        <a href="#" class="btn btn-blue">Entrar na lista VIP do Kit Sensorial</a>
+        <p class="muted" style="margin-top:8px">Prioridade no lançamento + desconto exclusivo</p>
+      </div>
+      <div>
+        <div class="kit-features">
+          <div class="kit-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg><h4>Painel reutilizável</h4><p>Acrílico com marcação semanal</p></div>
+          <div class="kit-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16h12V8z"/></svg><h4>Cards físicos</h4><p>Atividades e rotinas em cartão</p></div>
+          <div class="kit-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><h4>Pinos de conquista</h4><p>Marcação física de progresso</p></div>
+          <div class="kit-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/></svg><h4>Caixa especial</h4><p>Livreto para pais incluso</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div style="text-align:center;max-width:480px;margin:0 auto">
+      <span class="eyebrow">Escolha sua versão</span>
+      <h2>Comece hoje ou entre na lista</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card featured">
+        <div class="featured-tag">Comece hoje</div>
+        <div class="digital-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>100% Digital · Download imediato</div>
+        <div class="plan-name">Método NeuroRotina Kids — Essencial</div>
+        <div class="plan-price"><span class="cur">R$</span>47</div>
+        <div class="plan-note">Primeiros 7 Dias de Autonomia</div>
+        <hr class="plan-divider">
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Método P.O.N.T.O.S. aplicado em 7 dias</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Rotina visual modelo + editável</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Checklist Minha Meta de Hoje</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Quadro de pontos + recompensas</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Avaliação final da semana</div>
+        <div class="plan-cta">
+          <a href="#" class="btn btn-blue btn-full">Quero aplicar com meu filho</a>
+          <div class="plan-sub">Baixe e imprima hoje · Garantia de 7 dias</div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <span class="badge badge-amber" style="margin-bottom:12px;display:inline-block">Próxima versão</span>
+        <div class="plan-name">Kit Familiar</div>
+        <div class="plan-price" style="color:#854F0B"><span class="cur" style="color:#854F0B">R$</span>97</div>
+        <div class="plan-note">em breve · digital · lista</div>
+        <hr class="plan-divider">
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tudo do Essencial</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Rotinas extras por momento</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Modelos por faixa etária</div>
+        <div class="plan-feature active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Guia completo para pais</div>
+        <div class="plan-cta">
+          <a href="#" class="btn btn-ghost btn-full">Quero entrar na lista</a>
+          <div class="plan-sub">Aviso no lançamento + desconto</div>
+        </div>
+      </div>
+      <div class="pricing-card">
+        <span class="badge badge-gray" style="margin-bottom:12px;display:inline-block">Em desenvolvimento</span>
+        <div class="plan-name">Kit Sensorial P.O.N.T.O.S.</div>
+        <div class="plan-price" style="color:var(--gray-500);font-size:20px;margin-top:8px;font-weight:600">Versão Física</div>
+        <div class="plan-note">em produção · lista VIP</div>
+        <hr class="plan-divider">
+        <div class="plan-feature" style="color:var(--gray-500)"><svg viewBox="0 0 24 24" fill="none" stroke="#CED4DA" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Painel reutilizável</div>
+        <div class="plan-feature" style="color:var(--gray-500)"><svg viewBox="0 0 24 24" fill="none" stroke="#CED4DA" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cards físicos de atividades</div>
+        <div class="plan-feature" style="color:var(--gray-500)"><svg viewBox="0 0 24 24" fill="none" stroke="#CED4DA" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pinos de conquista</div>
+        <div class="plan-feature" style="color:var(--gray-500)"><svg viewBox="0 0 24 24" fill="none" stroke="#CED4DA" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Caixa especial + livreto</div>
+        <div class="plan-cta">
+          <a href="#kit-sensorial" class="btn btn-ghost btn-full">Quero prioridade no Kit</a>
+          <div class="plan-sub">Lista VIP · acesso antes do lançamento</div>
+        </div>
+      </div>
+    </div>
+    <p class="ethical-note" style="max-width:540px;margin:20px auto 0;text-align:center;border-left:none;padding-left:0;font-size:12px">O Método NeuroRotina Kids é uma ferramenta pedagógica de apoio à rotina familiar. Não substitui diagnóstico, acompanhamento médico, psicológico ou terapêutico.</p>
+  </div>
+</section>
+
+<section id="guarantee">
+  <div class="container">
+    <div class="guarantee-box">
+      <div class="shield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <h2 style="margin-bottom:10px">Garantia incondicional de 7 dias</h2>
+      <p class="lead" style="font-size:15px;max-width:400px;margin:0 auto">Você tem 7 dias para conhecer o método inteiro. Se entender que não é adequado para sua família, devolvemos seu investimento — sem perguntas, sem burocracia.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;max-width:440px;margin:0 auto">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas antes de comprar</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">O que exatamente vou receber após a compra?</div><div class="faq-a">Você recebe acesso imediato a arquivos PDF para download. São prontos para imprimir em casa ou em gráfica — não há envio físico pelos correios. O produto é 100% digital.</div></div>
+      <div class="faq-item"><div class="faq-q">O que é o Método P.O.N.T.O.S.?</div><div class="faq-a">É a estrutura central do NeuroRotina Kids: Planejar pequenas tarefas, Organizar a rotina visual, Notar o progresso, Transformar esforço em conquista, Observar e ajustar, e Celebrar com recompensas saudáveis.</div></div>
+      <div class="faq-item"><div class="faq-q">O método foi criado por profissional da área?</div><div class="faq-a">Sim. Foi criado por Chryslen Souza, pedagoga e especialista em AEE, a partir de uma necessidade real vivida em casa com seu filho Carlos Daniel, diagnosticado com TDAH.</div></div>
+      <div class="faq-item"><div class="faq-q">Meu filho precisa ter diagnóstico?</div><div class="faq-a">Não. O método pode apoiar crianças com dificuldade de organização e autonomia, com ou sem diagnóstico formal — especialmente de 6 a 12 anos.</div></div>
+      <div class="faq-item"><div class="faq-q">Os prêmios não vão deixar meu filho dependente de recompensa?</div><div class="faq-a">O objetivo não é comprar obediência. Os prêmios são usados como reforço positivo, combinados previamente e aplicados com equilíbrio para ajudar a criança a perceber progresso e constância.</div></div>
+      <div class="faq-item"><div class="faq-q">Preciso comprar o kit físico?</div><div class="faq-a">Não. A versão digital já permite aplicar o método completo. O kit sensorial será uma opção futura para famílias que desejam uma experiência mais tátil — ainda em desenvolvimento.</div></div>
+      <div class="faq-item"><div class="faq-q">Posso usar junto com terapia?</div><div class="faq-a">Sim. O método pode complementar terapia ocupacional, psicopedagogia, ABA e psicologia — mas não substitui nenhum deles.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="container-narrow">
+    <span class="eyebrow" style="color:rgba(255,255,255,.3)">Comece hoje</span>
+    <h2>A autonomia não nasce da cobrança.<br>Nasce da clareza, da repetição<br>e da confiança.</h2>
+    <p class="lead">Imprima um sistema. Aplique em 7 dias. Ajuste com sua criança. Um passo de cada vez.</p>
+    <a href="#pricing" class="btn btn-primary btn-lg">Quero aplicar o método com meu filho</a>
+    <div class="cta-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garantia de 7 dias</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download imediato</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>R$ 47,00</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>Sem frete</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><strong>Método NeuroRotina Kids</strong> &mdash; Chryslen Souza &mdash; Pedagoga · Especialista em AEE · Criadora do Método P.O.N.T.O.S.</div>
+  <div class="footer-links">
+    <a href="#">Ecossistema GM OS</a>
+    <a href="#">Brary Editora</a>
+    <a href="#">Política de privacidade</a>
+    <a href="#">Termos de uso</a>
+  </div>
+  <p class="footer-ethical">Produto 100% digital — arquivos para download e impressão. Não inclui envio físico. O Método NeuroRotina Kids é uma ferramenta pedagógica de apoio à rotina familiar. Não substitui diagnóstico, acompanhamento médico, psicológico, terapêutico ou psicopedagógico.</p>
+</footer>
+
+</body>
+</html>
