@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obrigada! — Método NeuroRotina Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0D47A1;--blue-mid:#1976D2;--blue-light:#42A5F5;
+  --blue-pale:#E3F2FD;--blue-pale2:#BBDEFB;
+  --amber:#FFC107;--amber-dark:#F57F17;--amber-pale:#FFF8E1;--amber-text:#4E2A00;
+  --white:#fff;--gray-50:#F8F9FA;--gray-100:#F1F3F5;
+  --gray-200:#E9ECEF;--gray-300:#DEE2E6;--gray-500:#6C757D;--gray-700:#495057;--gray-900:#212529;
+  --r-sm:8px;--r-md:12px;--r-lg:20px;--r-xl:28px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--gray-900);background:#fff;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+.container-narrow{max-width:640px;margin:0 auto;padding:0 24px}
+section{padding:64px 0}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light);margin-bottom:10px;display:block}
+h1{font-size:clamp(24px,4vw,40px);font-weight:700;line-height:1.15}
+h2{font-size:clamp(20px,3vw,30px);font-weight:700;line-height:1.22}
+h3{font-size:18px;font-weight:600}
+h4{font-size:15px;font-weight:600}
+.lead{font-size:17px;line-height:1.75;color:var(--gray-700)}
+.muted{color:var(--gray-500);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:700;font-size:15px;padding:14px 32px;border-radius:var(--r-sm);border:none;cursor:pointer;text-decoration:none;transition:opacity .15s,transform .1s}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+.btn-primary{background:var(--amber);color:var(--amber-text)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-white{background:#fff;color:var(--blue);font-weight:700}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-lg{padding:18px 40px;font-size:17px;border-radius:var(--r-md)}
+.btn-full{width:100%;justify-content:center}
+.divider{border:none;border-top:1px solid var(--gray-200);margin:0}
+.photo-placeholder{background:var(--gray-100);border:2px dashed var(--gray-300);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gray-500);font-size:11px;text-align:center}
+.photo-placeholder::before{content:attr(data-label);font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;background:var(--blue-pale);padding:2px 7px;border-radius:4px;margin-bottom:4px}
+
+/* HERO */
+#hero{background:var(--blue);padding:72px 0;text-align:center}
+.hero-inner{max-width:640px;margin:0 auto;padding:0 24px}
+.celebrate-icon{width:80px;height:80px;background:rgba(255,193,7,.15);border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.9}}
+.celebrate-icon svg{width:40px;height:40px;color:var(--amber)}
+.confirmed-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:6px 16px;margin-bottom:20px}
+.confirmed-badge svg{width:14px;height:14px;color:#4CAF50}
+.confirmed-badge span{font-size:12px;font-weight:700;color:#fff;letter-spacing:.04em}
+#hero h1{color:#fff;margin-bottom:18px}
+#hero .lead{color:rgba(255,255,255,.72);margin-bottom:32px;font-size:16px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+
+/* STEPS */
+#steps{background:var(--gray-50)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:28px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:2px;background:linear-gradient(90deg,var(--blue-pale2),var(--blue-light),var(--blue-pale2));z-index:0}
+.step-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:28px 20px;text-align:center;position:relative;z-index:1}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step-icon-wrap{width:48px;height:48px;border-radius:50%;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step-icon-wrap svg{width:22px;height:22px;color:var(--blue)}
+.step-card h4{margin-bottom:8px}
+.step-card p{font-size:14px;color:var(--gray-500);line-height:1.6}
+.email-hints{display:flex;flex-direction:column;gap:4px;margin-top:10px}
+.email-hint{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--blue);background:var(--blue-pale);padding:3px 10px;border-radius:20px;font-weight:500}
+.email-hint svg{width:12px;height:12px}
+
+/* CHRYSLEN MESSAGE */
+#message{background:#fff}
+.message-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-xl);padding:48px;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start}
+.author-photo-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.author-credentials{display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.cred-tag{font-size:11px;font-weight:600;color:var(--blue);background:var(--blue-pale);padding:3px 8px;border-radius:20px;text-align:center}
+.message-text blockquote{border-left:3px solid var(--amber);padding:16px 20px;background:var(--amber-pale);border-radius:0 var(--r-sm) var(--r-sm) 0;margin:20px 0}
+.message-text blockquote p{font-family:'Lora',serif;font-style:italic;font-size:15px;line-height:1.8;color:var(--amber-text)}
+.signature{margin-top:20px;display:flex;align-items:center;gap:12px}
+.sig-line{width:32px;height:2px;background:var(--amber);border-radius:2px}
+.sig-text{font-size:14px;font-weight:600;color:var(--gray-700)}
+
+/* PONTOS */
+#pontos{background:var(--blue)}
+.pontos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.pontos-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:var(--r-md);padding:20px}
+.pontos-letter{font-size:36px;font-weight:700;color:var(--amber);line-height:1;margin-bottom:5px;font-family:'Lora',serif}
+.pontos-word{font-size:10px;font-weight:700;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.pontos-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.pontos-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.6}
+.pontos-tagline{text-align:center;margin-top:28px;font-family:'Lora',serif;font-style:italic;font-size:16px;color:rgba(255,255,255,.65)}
+
+/* GROUP VIP */
+#group{background:var(--blue-mid)}
+.group-inner{max-width:560px;margin:0 auto;text-align:center;padding:0 24px}
+#group h2{color:#fff;margin-bottom:14px}
+#group p{color:rgba(255,255,255,.7);font-size:15px;line-height:1.75;margin-bottom:28px}
+.group-features{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
+.group-feat{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 14px;font-size:13px;color:rgba(255,255,255,.85)}
+.group-feat svg{width:13px;height:13px;color:var(--amber)}
+
+/* KIT LISTA */
+#kit-list{background:var(--gray-50)}
+.kit-form-wrap{max-width:520px;margin:0 auto}
+.kit-features-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.kit-feat{display:flex;align-items:center;gap:10px;font-size:14px;background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-md);padding:12px 14px}
+.kit-feat svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:5px}
+.form-group input{width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-size:14px;color:var(--gray-900);background:#fff;transition:border-color .15s}
+.form-group input:focus{outline:none;border-color:var(--blue)}
+.form-success{display:none;background:var(--blue-pale);border:1px solid var(--blue-pale2);border-radius:var(--r-md);padding:18px;text-align:center;margin-top:14px}
+.form-success svg{width:28px;height:28px;color:var(--blue);margin:0 auto 8px;display:block}
+.form-success p{font-size:14px;color:var(--blue-mid);font-weight:500}
+
+/* SHARE */
+#share{background:#fff}
+.share-inner{max-width:540px;margin:0 auto;text-align:center}
+.share-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.share-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--r-md);padding:20px 14px;text-align:center}
+.share-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.share-icon svg{width:20px;height:20px;color:var(--blue)}
+.share-card h4{font-size:13px;margin-bottom:4px}
+.share-card p{font-size:12px;color:var(--gray-500);line-height:1.5}
+
+/* CTA FINAL */
+#cta-final{background:var(--blue);padding:80px 0;text-align:center}
+#cta-final h2{color:#fff;margin-bottom:12px;font-family:'Lora',serif;font-style:italic;font-weight:500}
+#cta-final p{color:rgba(255,255,255,.65);font-size:16px;margin-bottom:28px}
+.cta-sub{font-size:13px;color:rgba(255,255,255,.4);margin-top:12px}
+
+/* FOOTER */
+footer{background:#060F26;color:rgba(255,255,255,.35);padding:28px 24px;text-align:center;font-size:13px}
+footer strong{color:rgba(255,255,255,.6)}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-top:7px;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.25);text-decoration:none;font-size:12px}
+.footer-ethical{margin:10px auto 0;font-size:11px;color:rgba(255,255,255,.2);max-width:520px;line-height:1.7}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  section{padding:48px 0}
+  .steps-grid{grid-template-columns:1fr}
+  .steps-grid::before{display:none}
+  .message-card{grid-template-columns:1fr;gap:24px;padding:28px 20px}
+  .author-photo-wrap{flex-direction:row;text-align:left;gap:16px}
+  .pontos-grid{grid-template-columns:1fr 1fr}
+  .kit-features-list{grid-template-columns:1fr}
+  .share-cards{grid-template-columns:1fr}
+  h1{font-size:26px}h2{font-size:22px}
+}
+@media(max-width:480px){.pontos-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="celebrate-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    </div>
+    <div class="confirmed-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Compra confirmada</span>
+    </div>
+    <h1>Parabéns!<br>Você deu o primeiro passo.</h1>
+    <p class="lead">Sua inscrição no Método NeuroRotina Kids foi confirmada. Você acaba de começar uma jornada para construir uma rotina mais leve, previsível e participativa com seu filho.</p>
+    <div class="hero-actions">
+      <a href="#steps" class="btn btn-primary btn-lg">Ver onde está meu material</a>
+      <a href="#message" class="btn btn-ghost">Ler mensagem da Chryslen</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRÓXIMOS PASSOS -->
+<section id="steps">
+  <div class="container">
+    <div style="text-align:center;max-width:480px;margin:0 auto">
+      <span class="eyebrow">O que fazer agora</span>
+      <h2>Próximos passos</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4>Verifique seu e-mail</h4>
+        <p>Os dados de acesso foram enviados automaticamente pela Kiwify.</p>
+        <div class="email-hints">
+          <span class="email-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Caixa de entrada</span>
+          <span class="email-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Promoções</span>
+          <span class="email-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Spam</span>
+        </div>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        </div>
+        <h4>Baixe e imprima</h4>
+        <p>Imprima os materiais e escolha um local visível da casa para iniciar a aplicação com seu filho.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Comece com poucas metas</h4>
+        <p>Nos primeiros dias, escolha até 5 tarefas simples e celebre cada pequena conquista do seu filho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- MENSAGEM DA CHRYSLEN -->
+<section id="message">
+  <div class="container">
+    <div class="message-card fade-in">
+      <div class="author-photo-wrap">
+        <img src="chryslenecarlosdaniel2.jpg" alt="Chryslen Souza"
+             style="width:160px;height:160px;border-radius:50%;object-fit:cover;
+                    border:3px solid var(--blue-pale2)">
+        <div class="author-credentials">
+          <span class="cred-tag">Pedagoga</span>
+          <span class="cred-tag">Especialista AEE</span>
+          <span class="cred-tag">Criadora P.O.N.T.O.S.</span>
+        </div>
+      </div>
+      <div class="message-text">
+        <span class="eyebrow">Uma mensagem para você</span>
+        <h2 style="margin-bottom:16px">Olá! Seja muito bem-vinda.</h2>
+        <p style="font-size:15px;color:var(--gray-700);line-height:1.75;margin-bottom:14px">Eu sou Chryslen Souza. Antes de ser pedagoga e especialista em AEE, sou mãe.</p>
+        <p style="font-size:15px;color:var(--gray-700);line-height:1.75;margin-bottom:14px">O Método NeuroRotina Kids nasceu dentro da minha própria casa, quando percebi que repetir comandos todos os dias não estava ensinando autonomia ao meu filho. Foi então que comecei a transformar a rotina em algo visual, previsível e participativo.</p>
+        <blockquote><p>"Meu desejo é que esse método também ajude sua família a viver uma rotina mais leve e cheia de pequenas conquistas."</p></blockquote>
+        <div class="signature">
+          <div class="sig-line"></div>
+          <div>
+            <div class="sig-text">Chryslen Souza</div>
+            <div class="muted">Pedagoga · Especialista em AEE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MÉTODO PONTOS -->
+<section id="pontos">
+  <div class="container">
+    <div style="text-align:center;max-width:520px;margin:0 auto">
+      <span class="eyebrow" style="color:var(--blue-light)">O framework</span>
+      <h2 style="color:#fff;margin-bottom:10px">O que você vai aplicar</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.7">O Método P.O.N.T.O.S. é a espinha dorsal de tudo o que você acaba de receber.</p>
+    </div>
+    <div class="pontos-grid">
+      <div class="pontos-card fade-in"><div class="pontos-letter">P</div><div class="pontos-word">Planejar</div><div class="pontos-title">Planejar pequenas tarefas</div><div class="pontos-desc">Poucas metas claras, visíveis e possíveis de executar.</div></div>
+      <div class="pontos-card fade-in"><div class="pontos-letter">O</div><div class="pontos-word">Organizar</div><div class="pontos-title">Organizar a rotina visual</div><div class="pontos-desc">A sequência do dia fica visível, reduzindo comandos verbais.</div></div>
+      <div class="pontos-card fade-in"><div class="pontos-letter">N</div><div class="pontos-word">Notar</div><div class="pontos-title">Notar o progresso</div><div class="pontos-desc">A criança marca o que fez e percebe que está avançando.</div></div>
+      <div class="pontos-card fade-in"><div class="pontos-letter">T</div><div class="pontos-word">Transformar</div><div class="pontos-title">Transformar esforço em conquista</div><div class="pontos-desc">Cada tarefa vira ponto e a sensação de "eu consigo" cresce.</div></div>
+      <div class="pontos-card fade-in"><div class="pontos-letter">O</div><div class="pontos-word">Observar</div><div class="pontos-title">Observar e ajustar</div><div class="pontos-desc">Os pais identificam o que funciona e adaptam sem rigidez.</div></div>
+      <div class="pontos-card fade-in"><div class="pontos-letter">S</div><div class="pontos-word">Celebrar</div><div class="pontos-title">Celebrar com recompensas saudáveis</div><div class="pontos-desc">Pontos geram prêmios simples e afetivos, reforçando constância.</div></div>
+    </div>
+    <p class="pontos-tagline">A autonomia é construída um passo de cada vez.</p>
+  </div>
+</section>
+
+
+<!-- GRUPO VIP -->
+<section id="group" style="padding:64px 0">
+  <div class="group-inner">
+    <span class="eyebrow" style="color:rgba(255,255,255,.45)">Comunidade</span>
+    <h2>Entre para o Grupo VIP<br>NeuroRotina Kids</h2>
+    <p>Receba dicas da Chryslen, novidades do método, atualizações e participe da construção dos próximos materiais — ao lado de outras famílias na mesma jornada.</p>
+    <div class="group-features">
+      <span class="group-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Dicas exclusivas da Chryslen</span>
+      <span class="group-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Novidades do método</span>
+      <span class="group-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Acesso ao Kit Sensorial em primeira mão</span>
+      <span class="group-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Comunidade de apoio</span>
+    </div>
+    <!-- LINK: substituir pelo link do grupo WhatsApp -->
+    <a href="https://chat.whatsapp.com/BD7JZ7FXuUF3lwmsakh9vY" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Entrar no Grupo VIP
+    </a>
+  </div>
+</section>
+
+
+<!-- KIT SENSORIAL — LISTA VIP -->
+<section id="kit-list">
+  <div class="container">
+    <div style="text-align:center;max-width:480px;margin:0 auto 32px">
+      <span class="eyebrow">Em desenvolvimento</span>
+      <h2>Você gostaria de testar<br>a versão física?</h2>
+      <p class="lead" style="margin-top:10px;font-size:15px">Estamos desenvolvendo o Kit Sensorial P.O.N.T.O.S. — uma versão física e tátil do método. Deixe seus dados para ter prioridade no lançamento.</p>
+    </div>
+    <div class="kit-form-wrap fade-in">
+      <div class="kit-features-list">
+        <div class="kit-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>Painel reutilizável</div>
+        <div class="kit-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16h12V8z"/></svg>Cards físicos de atividades</div>
+        <div class="kit-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Pinos de conquista</div>
+        <div class="kit-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/></svg>Caixa premium + livreto</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-xl);padding:32px" id="kit-form-wrap">
+        <h4 style="margin-bottom:18px;font-size:16px">Entrar na lista VIP do Kit Sensorial</h4>
+        <div class="form-group">
+          <label for="kit-nome">Seu nome</label>
+          <input type="text" id="kit-nome" placeholder="Como você se chama?">
+        </div>
+        <div class="form-group">
+          <label for="kit-wp">WhatsApp</label>
+          <input type="tel" id="kit-wp" placeholder="(00) 00000-0000">
+        </div>
+        <div class="form-group">
+          <label for="kit-ig">Instagram (opcional)</label>
+          <input type="text" id="kit-ig" placeholder="@seuperfil">
+        </div>
+        <button class="btn btn-blue btn-full" onclick="submitKitForm()" style="margin-top:6px">Quero participar da lista VIP</button>
+        <p style="font-size:12px;color:var(--gray-500);text-align:center;margin-top:10px">Seus dados são usados apenas para comunicar o lançamento. Sem spam.</p>
+      </div>
+      <div class="form-success" id="kit-success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p>Perfeito! Você está na lista VIP.<br>Avisaremos assim que o Kit Sensorial estiver disponível.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COMPARTILHE SUA EVOLUÇÃO -->
+<section id="share">
+  <div class="container">
+    <div class="share-inner">
+      <span class="eyebrow">Comunidade</span>
+      <h2>Queremos acompanhar suas conquistas</h2>
+      <p class="lead" style="margin-top:10px;font-size:15px">Ao longo da aplicação, registre o que funciona. Esses registros podem ajudar outras famílias futuramente.</p>
+      <div class="share-cards">
+        <div class="share-card">
+          <div class="share-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <h4>Fotos da rotina</h4>
+          <p>A rotina afixada, a criança marcando, o quadro de pontos preenchido</p>
+        </div>
+        <div class="share-card">
+          <div class="share-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h4>Pequenas vitórias</h4>
+          <p>Metas concluídas, primeira semana completa, conquistas espontâneas</p>
+        </div>
+        <div class="share-card">
+          <div class="share-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h4>Seu depoimento</h4>
+          <p>O que mudou na rotina da sua família nos primeiros 7 dias</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;font-size:14px;color:var(--gray-500)">Compartilhe no grupo VIP ou marque <strong>@neurorotinakids</strong> no Instagram.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container-narrow">
+    <h2>A autonomia não nasce da cobrança.<br>Ela nasce da clareza,<br>da repetição e da confiança.</h2>
+    <p>Comece hoje. Uma pequena conquista por vez.</p>
+    <a href="#steps" class="btn btn-primary btn-lg">Ver onde está meu material</a>
+    <div class="cta-sub">Baixe · Imprima · Aplique · Celebre</div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div><strong>Método NeuroRotina Kids</strong> &mdash; Chryslen Souza &mdash; Pedagoga · Especialista em AEE · Criadora do Método P.O.N.T.O.S.</div>
+  <div class="footer-links">
+    <a href="https://neurorotinakids.vercel.app">Página principal</a>
+    <a href="#">Política de privacidade</a>
+    <a href="#">Termos de uso</a>
+  </div>
+  <p class="footer-ethical">Ferramenta pedagógica de apoio à rotina familiar. Não substitui diagnóstico, acompanhamento médico, psicológico, terapêutico ou psicopedagógico.</p>
+</footer>
+
+<script>
+// Intersection Observer para animações de entrada
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Formulário Kit Sensorial — salva em localStorage
+function submitKitForm() {
+  const nome = document.getElementById('kit-nome').value.trim();
+  const wp = document.getElementById('kit-wp').value.trim();
+  const ig = document.getElementById('kit-ig').value.trim();
+  if (!nome || !wp) {
+    alert('Por favor, preencha nome e WhatsApp.');
+    return;
+  }
+  const entry = { nome, wp, ig, data: new Date().toISOString() };
+  try {
+    const existing = JSON.parse(localStorage.getItem('kit_lista') || '[]');
+    existing.push(entry);
+    localStorage.setItem('kit_lista', JSON.stringify(existing));
+  } catch(e) { /* silencia erro de storage */ }
+  document.getElementById('kit-form-wrap').style.display = 'none';
+  document.getElementById('kit-success').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
